@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf15738535240860" configfile="/SWE645HW3_aindoori/WebContent/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="SurveyForm.xhtml" x="122" y="754" id="pf15742733816091" referenceLink="//@navigationRule.0/@fromViewId|" outlinks="pf15742742784496 pf15742742784497 pf15742774877908 pf157437321891210" path="SurveyForm.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="SimpleAcknowledgement.xhtml" x="338" y="178" id="pf15742733816134" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15742742784496" path="/SimpleAcknowledgement.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="WinnerAcknowledgement.xhtml" x="338" y="562" id="pf15742733816135" referenceLink="//@navigationRule.0/@navigationCase.1/@toViewId|" inlinks="pf15742742784497" path="/WinnerAcknowledgement.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="ListSurvey.xhtml" x="338" y="946" id="pf15742774877909" referenceLink="//@navigationRule.0/@navigationCase.2/@toViewId|" inlinks="pf15742774877908" path="/ListSurvey.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="SurveyForm.xhtml" x="338" y="1330" id="pf157437321891211" referenceLink="//@navigationRule.0/@navigationCase.3/@toViewId|" inlinks="pf157437321891210" path="/SurveyForm.xhtml"/>
+  <links id="pf15742742784496" target="pf15742733816134" source="pf15742733816091" outcome="SimpleAcknowledgement"/>
+  <links id="pf15742742784497" target="pf15742733816135" source="pf15742733816091" outcome="WinnerAcknowledgement"/>
+  <links id="pf15742774877908" target="pf15742774877909" source="pf15742733816091" outcome="ListSurvey"/>
+  <links id="pf157437321891210" target="pf157437321891211" source="pf15742733816091" outcome="SurveyForm"/>
+</pageflow:Pageflow>

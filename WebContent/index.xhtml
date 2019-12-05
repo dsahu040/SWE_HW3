@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Aditya Indoori - index.xhtml
+This is the xhtml file for the Welcoma Page UI. It can redirect to survey form or survey list. -->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>Welcome</title>
+	<link rel="stylesheet" type="text/css" href="SurveyStyle.css" />
+</h:head>
+
+<h:body>
+
+	<h1>Welcome to SWE645 HW3</h1>
+	<div class="credentials">SWE645 Assignment 3: Aditya
+		Indoori(G01129724)</div>
+
+	<h:form>
+		<p:commandButton value="Survey Form" action="#{student.surveyPage}"
+			ajax="false" style="margin:10px" immediate="true" />
+		<p:commandButton value="Survey List" action="#{student.listSurveys}"
+			ajax="false" style="margin:10px" immediate="true" />
+	</h:form>
+
+</h:body>
+
+</html>

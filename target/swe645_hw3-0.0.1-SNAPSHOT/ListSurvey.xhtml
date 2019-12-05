@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Aditya Indoori - ListSurvey.xhtml
+This is the xhtml file for the List of Surveys UI. It has all the surveys stored in the database. -->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>SurveyList</title>
+	<link rel="stylesheet" type="text/css" href="SurveyStyle.css" />
+</h:head>
+
+<h:body>
+
+	<h1>List of all surveys.</h1>
+	<div class="credentials">SWE645 Assignment 3: Aditya
+		Indoori(G01129724)</div>
+
+	<p:dataTable var="studentEntity" value="#{student.surveys}"
+		tableStyle="width:auto" rowIndexVar="index">
+
+		<p:column>
+			<f:facet name="header">
+				<h:outputText value="S.No" />
+			</f:facet>
+			<h:outputText value="#{index + 1}" />
+		</p:column>
+
+		<p:column headerText="First Name">
+			<h:outputText value="#{studentEntity.firstName}" />
+		</p:column>
+
+		<p:column headerText="Last Name">
+			<h:outputText value="#{studentEntity.lastName}" />
+		</p:column>
+
+		<p:column headerText="Street Address">
+			<h:outputText value="#{studentEntity.streetAddress}" />
+		</p:column>
+
+		<p:column headerText="City">
+			<h:outputText value="#{studentEntity.city}" />
+		</p:column>
+
+		<p:column headerText="State">
+			<h:outputText value="#{studentEntity.state}" />
+		</p:column>
+
+		<p:column headerText="Zip">
+			<h:outputText value="#{studentEntity.zip}" />
+		</p:column>
+
+		<p:column headerText="Telephone">
+			<h:outputText value="#{studentEntity.telephone}" />
+		</p:column>
+
+		<p:column headerText="Email">
+			<h:outputText value="#{studentEntity.email}" />
+		</p:column>
+
+		<p:column headerText="Date of Survey">
+			<h:outputText value="#{studentEntity.dateOfSurvey}" />
+		</p:column>
+
+		<p:column headerText="Date of Admission">
+			<h:outputText value="#{studentEntity.dateOfAdmission}" />
+		</p:column>
+
+		<p:column headerText="Most liked">
+			<h:outputText value="#{studentEntity.mostLikedString}" />
+		</p:column>
+
+		<p:column headerText="Interest">
+			<h:outputText value="#{studentEntity.interested}" />
+		</p:column>
+
+		<p:column headerText="Recommend">
+			<h:outputText value="#{studentEntity.recommend}" />
+		</p:column>
+
+		<p:column headerText="Raffle">
+			<h:outputText value="#{studentEntity.raffle}" />
+		</p:column>
+
+		<p:column headerText="Mean">
+			<h:outputText value="#{studentEntity.mean}" />
+		</p:column>
+
+		<p:column headerText="Standard Deviation">
+			<h:outputText value="#{studentEntity.standardDeviation}" />
+		</p:column>
+	</p:dataTable>
+	<h:form>
+		<p:commandButton value="Survey Form" action="#{student.surveyPage}"
+			ajax="false" style="margin:10px" immediate="true" />
+	</h:form>
+
+</h:body>
+
+</html>

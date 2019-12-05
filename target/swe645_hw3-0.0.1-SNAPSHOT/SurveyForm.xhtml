@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<!-- Aditya Indoori - SurveyForm.xhtml
+This is the xhtml file for the surveyform UI. It has all the inputs that are designed using PrimeFaces. -->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>SurveyPage</title>
+	<link rel="stylesheet" type="text/css" href="SurveyStyle.css" />
+</h:head>
+
+<h:body>
+
+	<h1>Student Survey Form</h1>
+	<div class="credentials">SWE645 Assignment 3: Aditya
+		Indoori(G01129724)</div>
+	<h:form id="form">
+		<p:panel id="panel" autocomplete="on">
+			<p:messages />
+			<p:panelGrid cellpadding="5" styleClass="showcase-text-align-center">
+
+				<!-- REQUIRED FIELDS -->
+
+				<p:outputLabel for="first_name" value="First name"
+					style="margin:10px" />
+				<p:inputText value="#{student.firstName}" name="first_name"
+					id="first_name" placeholder="John" required="true" autofocus="true"
+					requiredMessage="Please enter first name"
+					validatorMessage="Enter a valid first name" style="margin:10px">
+					<f:validateLength maximum="15" />
+					<f:validateRegex pattern="^[a-zA-Z]+$" />
+				</p:inputText>
+
+				<br />
+
+				<p:outputLabel for="last_name" value="Last name" style="margin:10px" />
+				<p:inputText value="#{student.lastName}" name="last_name"
+					id="last_name" placeholder="Doe" required="true" autofocus="true"
+					requiredMessage="Please enter last name"
+					validatorMessage="Enter a valid last name" style="margin:10px">
+					<f:validateLength maximum="15" />
+					<f:validateRegex pattern="^[a-zA-Z]+$" />
+				</p:inputText>
+
+				<br />
+
+				<p:outputLabel for="zip" value="Zip" style="margin:10px" />
+				<p:inputNumber value="#{student.zip}" id="zip" name="zip"
+					placeholder="22124" required="true"
+					requiredMessage="Please enter zip"
+					validatorMessage="Enter a valid zipcode" padControl="false"
+					thousandSeparator="" maxlength="5" maxValue="99999"
+					style="margin:10px">
+					<f:validateLength minimum="5" maximum="5" />
+				</p:inputNumber>
+
+				<br />
+
+				<p:outputLabel for="address" value="Street Address"
+					style="margin:10px" />
+				<p:inputText value="#{student.streetAddress}" id="address"
+					name="address" placeholder="9999, MyStreet" required="true"
+					requiredMessage="Please enter a street address"
+					validatorMessage="Enter a valid address" style="margin:10px"
+					maxLength="30">
+					<f:validateLength maximum="30" />
+					<f:validateRegex pattern="^([a-zA-Z0-9]+)+[a-zA-Z0-9]$" />
+				</p:inputText>
+
+				<br />
+
+				<p:outputLabel for="city" value="City" style="margin:10px" />
+				<p:inputText value="#{student.city}" id="city" name="city"
+					placeholder="Fairfax" required="true"
+					requiredMessage="Please enter a city" style="margin:10px" />
+
+				<br />
+
+				<p:outputLabel for="state" value="State" style="margin:10px" />
+				<p:inputText value="#{student.state}" id="state" name="state"
+					placeholder="Virginia" required="true"
+					requiredMessage="Please enter a state" style="margin:10px" />
+
+				<br />
+
+				<p:outputLabel for="telephone" value="Telephone" style="margin:10px" />
+				<p:inputMask value="#{student.telephone}" mask="(999)-999-9999"
+					id="telephone" name="telephone" required="true"
+					requiredMessage="Missing or incomplete phone number"
+					style="margin:10px" />
+
+				<br />
+
+				<p:outputLabel for="email" value="Email" />
+				<p:inputText value="#{student.email}" id="email" name="email"
+					placeholder="johndoe@gmail.com" required="true"
+					requiredMessage="Missing or incomplete email"
+					validatorMessage="Invalid Email" style="margin:10px">
+					<f:validateRegex
+						pattern="[\w\.-]*[a-zA-Z0-9_]@[\w\.-]*[a-zA-Z0-9]\.[a-zA-Z][a-zA-Z\.]*[a-zA-Z]" />
+				</p:inputText>
+
+				<br />
+
+				<p:outputLabel for="dateOfSurvey" value="Date of Survey"
+					style="margin:10px" />
+				<p:datePicker value="#{student.dateOfSurvey}" id="dateOfSurvey"
+					name="dateOfSurvey" required="true"
+					requiredMessage="Missing or incomplete survey date"
+					style="margin:10px" />
+
+				<br />
+
+				<!-- REMAINING FIELDS -->
+				
+				<p:outputLabel for="likeCampus"
+					value="What you liked the most about the campus:"
+					style="margin:10px" />
+				<p:selectManyCheckbox value="#{student.mostLiked}" id="likeCampus"
+					style="margin:10px">
+					<f:selectItem itemLabel="Students" itemValue="Students"
+						style="margin:10px" />
+					<f:selectItem itemLabel="Location" itemValue="Location"
+						style="margin:10px" />
+					<f:selectItem itemLabel="Campus" itemValue="Campus"
+						style="margin:10px" />
+					<f:selectItem itemLabel="Atmosphere" itemValue="Atmosphere"
+						style="margin:10px" />
+					<f:selectItem itemLabel="Dorm Rooms" itemValue="Dorm Rooms"
+						style="margin:10px" />
+					<f:selectItem itemLabel="Sports" itemValue="Sports"
+						style="margin:10px" />
+				</p:selectManyCheckbox>
+
+				<br />
+
+				<p:outputLabel for="universityInterest"
+					value="How you became interested in the university"
+					style="margin:10px" />
+				<p:selectOneRadio value="#{student.interested}"
+					id="universityInterest" unselectable="true" style="margin:10px">
+					<f:selectItem itemLabel="Friends" itemValue="Friends"
+						style="margin:10px" />
+					<f:selectItem itemLabel="Television" itemValue="Television"
+						style="margin:10px" />
+					<f:selectItem itemLabel="Internet" itemValue="Internet"
+						style="margin:10px" />
+					<f:selectItem itemLabel="Others" itemValue="Others"
+						style="margin:10px" />
+				</p:selectOneRadio>
+
+				<br />
+
+				<p:outputLabel for="recommendations"
+					value="Likelihood of recommending this school to other prospective students:"
+					style="margin:10px" />
+				<p:autoComplete value="#{student.recommend}" id="recommendations"
+					completeMethod="#{student.completeRecommend}" style="margin:10px"
+					forceSelection="true" />
+
+				<br />
+
+				<p:outputLabel for="raffle" value="Raffle" style="margin:10px" />
+				<p:inputText value="#{student.raffle}" id="raffle" name="raffle"
+					placeholder="1,2,3,4" style="margin:10px"
+					validatorMessage="Invalid Raffle data">
+					<f:validateRegex
+						pattern="(^([0-9]+([,][0-9]+){8}([,][0-9]+)+)$)|(^[.]{0}$)"></f:validateRegex>
+				</p:inputText>
+
+				<br />
+
+				<p:outputLabel for="semesterStartDate"
+					value="Start Date of Semester" style="margin:10px" />
+				<p:datePicker value="#{student.dateOfAdmission}"
+					id="semesterStartDate" name="semesterStartDate" style="margin:10px">
+				</p:datePicker>
+
+				<br />
+
+			</p:panelGrid>
+
+			<p:commandButton value="Register" action="#{student.submit}"
+				ajax="false" style="margin:10px" />
+			<p:commandButton value="Reset" action="#{student.reset}"
+				immediate="true" ajax="false" style="margin:10px;">
+				<p:resetInput target="panel" />
+			</p:commandButton>
+			<p:commandButton value="List Surveys" action="#{student.listSurveys}"
+				ajax="false" style="margin:10px" immediate="true" />
+		</p:panel>
+	</h:form>
+</h:body>
+
+
+</html>

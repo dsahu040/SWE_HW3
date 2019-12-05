@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- Aditya Indoori - SimpleAcknowledgement.xhtml
+This is the xhtml file for the Simple Acknowledgement UI. It has all the results of the business logic that are designed using PrimeFaces. -->
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<title>SimpleAck</title>
+	<link rel="stylesheet" type="text/css" href="SurveyStyle.css" />
+</h:head>
+
+<h:body>
+
+	<h1>Thank you for participating in the survey.</h1>
+	<div class="credentials">SWE645 Assignment 3: Aditya
+		Indoori(G01129724)</div>
+
+	<p:panelGrid columns="2">
+
+		<p:outputLabel value="First Name:" />
+		<p:outputLabel value="#{student.firstName}" />
+
+		<p:outputLabel value="Last Name:" />
+		<p:outputLabel value="#{student.lastName}" />
+
+		<p:outputLabel value="Mean:" />
+		<p:outputLabel value="#{student.winningResult.mean}" />
+
+		<p:outputLabel value="Standard Deviation:" />
+		<p:outputLabel value="#{student.winningResult.standardDeviation}" />
+
+		<p:outputLabel value="Database Status:" />
+		<p:outputLabel value="#{student.databaseStore}" />
+	</p:panelGrid>
+	<h:form>
+		<p:commandButton value="Survey Form" action="#{student.surveyPage}"
+			ajax="false" style="margin:10px" immediate="true" />
+		<p:commandButton value="List Surveys" action="#{student.listSurveys}"
+			ajax="false" style="margin:10px" immediate="true" />
+	</h:form>
+
+</h:body>
+
+</html>

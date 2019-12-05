@@ -1,0 +1,42 @@
+/* Aditya Indoori - SurveyStyle.css:
+This is the css file to style the survey form. There are various designs for different parts of the page. */
+body {
+	background-position: bottom 20px right 20px;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: 200px 130px;
+	background-color: #E0E0E0;
+}
+
+.bgrnd {
+	position: fixed;
+	right: 10px;
+	bottom: 10px;
+}
+
+h1 {
+	color: blue;
+	text-shadow: 2px 2px #BDBDBD;
+	border: 5px solid blue;
+	text-align: center;
+}
+
+.credentials {
+	position: fixed;
+	bottom: 5px;
+	left: 5px;
+	width: 100%;
+}
+
+table, th, td {
+	border: 1px solid black;
+}
+
+td {
+	width: 50%;
+	padding: 5px;
+	margin: 5px;
+	text-align: left;
+	vertical-align: top;
+	color: blue
+}

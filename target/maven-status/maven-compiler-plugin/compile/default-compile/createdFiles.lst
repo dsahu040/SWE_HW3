@@ -1,0 +1,5 @@
+com\gmu\entity\StudentEntity.class
+com\gmu\swe\services\StudentService.class
+com\gmu\entitymanager\Manager.class
+com\gmu\swe\Student.class
+com\gmu\swe\WinningResult.class
